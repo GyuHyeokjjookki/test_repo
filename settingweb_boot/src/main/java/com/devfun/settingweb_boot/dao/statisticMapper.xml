@@ -40,7 +40,7 @@
         select count(*) as dayCnt
         from statistc.requestinfo ri, statistc.departments d
         where substr(ri.createDate, 3,4) = #{month}
-        and ri.deptID = d.id;
+        group by deptID;
     </select>
 
 </mapper>
